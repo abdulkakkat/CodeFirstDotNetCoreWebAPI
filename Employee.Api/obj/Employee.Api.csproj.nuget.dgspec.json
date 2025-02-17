@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rahim\\webapi\\Employee.Api\\Employee.Api.csproj": {}
+    "D:\\rahim\\GitHubProjetcs\\DemoTest\\TestRepo\\Employee.Api\\Employee.Api.csproj": {}
   },
   "projects": {
-    "D:\\rahim\\webapi\\Employee.Api\\Employee.Api.csproj": {
+    "D:\\rahim\\GitHubProjetcs\\DemoTest\\TestRepo\\Employee.Api\\Employee.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rahim\\webapi\\Employee.Api\\Employee.Api.csproj",
+        "projectUniqueName": "D:\\rahim\\GitHubProjetcs\\DemoTest\\TestRepo\\Employee.Api\\Employee.Api.csproj",
         "projectName": "Employee.Api",
-        "projectPath": "D:\\rahim\\webapi\\Employee.Api\\Employee.Api.csproj",
+        "projectPath": "D:\\rahim\\GitHubProjetcs\\DemoTest\\TestRepo\\Employee.Api\\Employee.Api.csproj",
         "packagesPath": "C:\\Users\\shano\\.nuget\\packages\\",
-        "outputPath": "D:\\rahim\\webapi\\Employee.Api\\obj\\",
+        "outputPath": "D:\\rahim\\GitHubProjetcs\\DemoTest\\TestRepo\\Employee.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shano\\AppData\\Roaming\\NuGet\\NuGet.Config"

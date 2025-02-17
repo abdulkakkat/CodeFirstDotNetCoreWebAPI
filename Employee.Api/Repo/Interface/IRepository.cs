@@ -16,7 +16,7 @@ namespace Employee.Api.Repo.Interface
        // end
         Task<Emp> AddEmployee(EmpAddDto empDto);
 
-        Task<Emp> UpdateEmployee(Emp  emp);
+        Task<Emp> UpdateEmployee(int empId,EmpAddDto empAddDto);
 
          Task<bool> DeleteEmployee(int empId);
 

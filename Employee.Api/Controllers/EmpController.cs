@@ -68,14 +68,14 @@ namespace Employee.Api.Controllers
         }
 
         [HttpPut("{empId}")]
-        public async Task<IActionResult> UpdateEmployee(int empId,Emp emp)
+        public async Task<IActionResult> UpdateEmployee(int empId,EmpAddDto EmpAddDto)
         {
             //check whether an employee exixits with this id
             var existingEmp=(await _repository.GetEmployees(new[] {empId})).FirstOrDefault();
 
             if (existingEmp==null)
             return NotFound("sdff");
-            await _repository.UpdateEmployee(emp);
+            await _repository.UpdateEmployee(empId,EmpAddDto);
             return NoContent();
            // return Ok();
         } 

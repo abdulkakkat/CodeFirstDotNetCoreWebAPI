@@ -69,15 +69,16 @@ namespace Employee.Api.Repo.Service
 
         }
 
-        public async  Task<Emp> UpdateEmployee(Emp  emp)
+        public async  Task<Emp> UpdateEmployee(int empId,EmpAddDto empAddDto)
         {
-            var employeeForchanges=await _myDbContext.Employee.SingleAsync(x=>x.Id==emp.Id);
-            employeeForchanges.Age=emp.Age;
-            employeeForchanges.Address=emp.Address;
+            var employeeForchanges=await _myDbContext.Employee.SingleAsync(x=>x.Id==empId);
+            employeeForchanges.Age=empAddDto.Age;
+            employeeForchanges.Address=empAddDto.Address;
+            employeeForchanges.Name=empAddDto.Name;
 
             _myDbContext.Employee.Update(employeeForchanges);
             await _myDbContext.SaveChangesAsync();
-            return emp;
+            return employeeForchanges;
 
         }
         public async  Task<bool> DeleteEmployee(int empId)
