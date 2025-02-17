@@ -1,3 +1,9 @@
 # TestRepo<br>
 
- used .NET 6 for this project
+ used .NET 6 for web api project <br>
+ Nuget Pakages<br>
+   Microsoft.EntityFrameworkCore.SqlServer <br>
+   Microsoft.EntityFrameworkCore.Tools <br>
+   Microsoft.Extensions.Configuration <br>
+
+ 
