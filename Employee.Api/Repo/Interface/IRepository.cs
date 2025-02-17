@@ -9,15 +9,13 @@ namespace Employee.Api.Repo.Interface
 {
     public interface IRepository
     {
-        Task<List<Emp>> GetAllEmployee();
-        Task<Emp> GetEmployee(int id);
-        // alternative method to get employee data  by id/all
+        //alternative method to get employee data  by id/all
+        //Task<List<Emp>> GetAllEmployee();
+        //Task<Emp> GetEmployee(int id);
+        
          Task<IEnumerable<Emp>> GetEmployees(int[] ids);
-       // end
-        Task<Emp> AddEmployee(EmpAddDto empDto);
-
+         Task<Emp> AddEmployee(EmpAddDto empDto);
         Task<Emp> UpdateEmployee(int empId,EmpAddDto empAddDto);
-
          Task<bool> DeleteEmployee(int empId);
 
         

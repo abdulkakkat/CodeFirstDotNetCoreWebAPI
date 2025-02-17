@@ -34,24 +34,26 @@ namespace Employee.Api.Repo.Service
             return addEmployee;
            
         }
+#region  
+     //alternative method to get employee data  by id/all
 
-       public async Task<List<Emp>>GetAllEmployee()
-        {
+    //    public async Task<List<Emp>>GetAllEmployee()
+    //     {
 
-            var  employee=_myDbContext.Employee;
-           return await employee.OrderBy(o=>o.Id).ToListAsync();
+    //         var  employee=_myDbContext.Employee;
+    //        return await employee.OrderBy(o=>o.Id).ToListAsync();
             
-        }
+    //     }
 
-       public async Task<Emp> GetEmployee(int id)
-        {
-            //var  employee= await _myDbContext.Employee.ToListAsync();
-            var employee1= await _myDbContext.Employee.FirstOrDefaultAsync(x=>x.Id==id);
+    //    public async Task<Emp> GetEmployee(int id)
+    //     {
+    //         //var  employee= await _myDbContext.Employee.ToListAsync();
+    //         var employee1= await _myDbContext.Employee.FirstOrDefaultAsync(x=>x.Id==id);
           
-           return employee1;
+    //        return employee1;
            
-        }
-
+    //     }
+#endregion
 
         public async  Task<IEnumerable<Emp>> GetEmployees(int[] ids)
         {

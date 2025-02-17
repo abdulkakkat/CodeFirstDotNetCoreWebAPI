@@ -9,15 +9,12 @@ namespace Employee.Api.Model
 {
     public class Emp
     {   
-      [Key]
+       [Key]
         public int Id { get; set; }
         public string?  Name { get; set; }
         public int Age { get; set; }
         public string? Address { get; set; }
         // public Guid mmm {get;set;}
-
-      
-
         //set foreign key starts
         public int ManagerID { get; set; }
         [ForeignKey("ManagerID")]

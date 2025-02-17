@@ -28,38 +28,39 @@ namespace Employee.Api.Controllers
             var employeeData= await _repository.AddEmployee(empAddDto);
             return Ok(employeeData);
         }
-
-        [HttpGet("getEmployees")]
-        public async Task<IActionResult> GetALllEmployee()
-        {
-            var employees =await _repository.GetAllEmployee();
-            return Ok(employees);
-        }
-
-        
-        [HttpGet("{ID}")]
-        public async Task<IActionResult> GetEmplByID(int ID)
-        {
-            var employee=await _repository.GetEmployee(ID);
-            if(employee==null)
-            return NotFound();
-          
-            return Ok(employee);
-
-        }
-
-        // [HttpGet("{id}")]
-        // public async Task<IActionResult> GetEmpById(int id)
+#region 
+// alternative method to get employee data  by id/all
+        // [HttpGet("getEmployees")]
+        // public async Task<IActionResult> GetALllEmployee()
         // {
-        //     var employee1=(await _repository.GetEmployees(new[] {id})).FirstOrDefault(o=>o.Id==id);
-        //     if(employee1==null)
-        //     return NotFound();
-        //     return Ok(employee1);
-        
-
+        //     var employees =await _repository.GetAllEmployee();
+        //     return Ok(employees);
         // }
 
-        [HttpGet]
+        
+        // [HttpGet("{ID}")]
+        // public async Task<IActionResult> GetEmplByID(int ID)
+        // {
+        //     var employee=await _repository.GetEmployee(ID);
+        //     if(employee==null)
+        //     return NotFound();
+          
+        //     return Ok(employee);
+
+        // }
+#endregion
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetEmpById(int id)
+        {
+            var employee1=(await _repository.GetEmployees(new[] {id})).FirstOrDefault(o=>o.Id==id);
+            if(employee1==null)
+            return NotFound();
+            return Ok(employee1);
+        
+
+        }
+
+        [HttpGet("Employees")]
         public async Task<IActionResult> GetAllEmp()
         {
             var employees1=await _repository.GetEmployees(null);
@@ -68,14 +69,14 @@ namespace Employee.Api.Controllers
         }
 
         [HttpPut("{empId}")]
-        public async Task<IActionResult> UpdateEmployee(int empId,EmpAddDto EmpAddDto)
+        public async Task<IActionResult> UpdateEmployee(int empId,EmpAddDto empAddDto)
         {
             //check whether an employee exixits with this id
             var existingEmp=(await _repository.GetEmployees(new[] {empId})).FirstOrDefault();
 
             if (existingEmp==null)
             return NotFound("sdff");
-            await _repository.UpdateEmployee(empId,EmpAddDto);
+            await _repository.UpdateEmployee(empId,empAddDto);
             return NoContent();
            // return Ok();
         } 
